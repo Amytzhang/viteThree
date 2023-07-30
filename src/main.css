@@ -1,0 +1,6 @@
+/* src/main.css */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* 添加自定义的 CSS 样式 */

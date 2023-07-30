@@ -1,14 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="app">
+  <div class="bg-white dark:bg-black dark:bg-slate-800">
     <router-view></router-view>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.app {
-  width: 100%;
-  height: 100%;
-}
-</style>
+<script setup></script>
+<style lang="scss"></style>

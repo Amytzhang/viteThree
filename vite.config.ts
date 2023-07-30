@@ -4,7 +4,11 @@ import{resolve} from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
-
+  // css: {
+  //   postcss: {
+  //     plugins: [require('tailwindcss'), require('autoprefixer')],
+  //   },
+  // },
   resolve: {
     alias: {
       '@': resolve(__dirname, './src')
