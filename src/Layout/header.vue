@@ -1,11 +1,15 @@
 <template>
-  <div class=""></div>
+  <div class="define-header flex justify-end">
+    <div class="">
+      <div @click="changBg" class="text-slate-900 dark:text-white mt-5 text-base font-medium tracking-tight">切换</div>
+    </div>
+  </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from "vue"
 const bg = ref(true)
-const changBackground = () => {
+const changBg = () => {
   // Whenever the user explicitly chooses light mode
   if (localStorage.getItem("theme") === "light") {
     localStorage.setItem("theme", "dark")
