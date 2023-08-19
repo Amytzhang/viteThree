@@ -17,13 +17,20 @@ module.exports = {
     parser: "@typescript-eslint/parser",
     ecmaVersion: 2020,
     sourceType: "module",
-    jsxPragma: "React",
     ecmaFeatures: {
       jsx: true,
       tsx: true
     }
   },
   rules: {
+    indent: [
+      2,
+      2, // 缩进两个
+      {
+          SwitchCase: 1, // switch case缩进缩进2格（2x1）
+          VariableDeclarator: 'first' // const let var 对齐缩进
+      }
+  ],
     // TS
     "@typescript-eslint/no-explicit-any": "off",
     "no-debugger": "off",
@@ -72,3 +79,4 @@ module.exports = {
     ]
   }
 }
+

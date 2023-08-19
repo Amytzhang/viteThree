@@ -11,7 +11,7 @@ function tryT() {
   class Person {
     public name: string
     constructor() {
-      this.name = "namespace"
+      this.name = 'namespace'
     }
   }
   let p = new Person()

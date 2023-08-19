@@ -81,41 +81,41 @@
 </template>
 
 <script lang="ts">
-import tryT from "./about"
+import tryT from './about'
 export default {
-  name: "TsBasis2",
+  name: 'TsBasis2',
   components: {},
   methods: {
     baseTs() {
       const num: number = 111
-      const str: string = "12122"
+      const str: string = '12122'
       //联合类型
       var age: string | number = 1
       var obj: object[] = [{}]
-      var interests: Array<string> = ["23", "45"],
-        interests2: string[] = ["2", "22"]
-      console.log("interests---", interests, "interests2---", interests2)
+      var interests: Array<string> = ['23', '45'],
+        interests2: string[] = ['2', '22']
+      console.log('interests---', interests, 'interests2---', interests2)
       var arr: number[] = [1, 11]
       //元组 类似一个数组  它的长度和类型都是固定的数组
-      const tuple: [string, number] = ["2", 1]
-      console.log("元组：", tuple)
+      const tuple: [string, number] = ['2', 1]
+      console.log('元组：', tuple)
       const enum USER_ROLE1 {
-        USER = "user",
-        ROLE = "manger"
+        USER = 'user',
+        ROLE = 'manger'
       }
       //“const”枚举只能用于属性或索引访问表达式或导入声明或导出赋值或类型查询的右侧。
       // console.log('enum:',USER_ROLE1)USER_ROLE1.USER
       enum USER_ROLE {
-        USER = "user",
-        ROLE = "manger"
+        USER = 'user',
+        ROLE = 'manger'
       }
       //“const”枚举只能用于属性或索引访问表达式或导入声明或导出赋值或类型查询的右侧。
-      console.log("enum:", USER_ROLE)
-      let root: HTMLElement | null = document.getElementById("root")
-      root!.style.backgroundColor == "red"
-        ? (root!.style.backgroundColor = "white")
-        : (root!.style.backgroundColor = "red") //断言不为空
-      console.log("root!.style.backgroundColor", root!.style.backgroundColor == "red")
+      console.log('enum:', USER_ROLE)
+      let root: HTMLElement | null = document.getElementById('root')
+      root!.style.backgroundColor == 'red'
+        ? (root!.style.backgroundColor = 'white')
+        : (root!.style.backgroundColor = 'red') //断言不为空
+      console.log('root!.style.backgroundColor', root!.style.backgroundColor == 'red')
       //null  undefined
       //它们都是其它类型的子类型  你可以把它们赋值给其他类型的变量
       //Type 'null' is not assignable to type 'string'.----strict模式下有一个"strictNullChecks":false,
@@ -125,7 +125,7 @@ export default {
     voidTs(name: string): void {
       let trycc: string | number
       trycc = 1
-      console.log("联合类型：", trycc.toString())
+      console.log('联合类型：', trycc.toString())
       console.log(`void类型:${name}`)
     },
     //never 是其它类型的子类型，代表不会出现的值
@@ -153,23 +153,23 @@ export default {
        */
 
       class User implements Ischool {
-        name: "string"
+        name: 'string'
         age: 111
-        address: "xxxxss"
+        address: 'xxxxss'
         getName() {
           return this.name
         }
       }
       let user = new User()
 
-      console.log("interface---implements", user.age, user.getName())
+      console.log('interface---implements', user.age, user.getName())
       var school: Ischool = {
-        name: "xxx",
+        name: 'xxx',
         age: 100,
-        address: "五道口"
+        address: '五道口'
       }
       // school.name='ssss'//Cannot assign to 'name' because it is a constant or a read-only property.
-      console.log("interface:", school)
+      console.log('interface:', school)
       //接口可扩展  接口可继承接口
       interface showSchool extends Ischool {
         type: string
@@ -177,10 +177,10 @@ export default {
       }
       let showExtendsSchool = {
         ...school,
-        type: "计算机",
+        type: '计算机',
         学校等级: 211
       }
-      console.log("扩展interface:", showExtendsSchool)
+      console.log('扩展interface:', showExtendsSchool)
 
       var create1 = (obj: object) => {}
       create1(function () {})
@@ -195,18 +195,18 @@ export default {
       //类可以实现多个接口，但只能继承一个父类
       class Person implements speackable, eatable {
         speack() {
-          console.log("类实现接口方法1")
+          console.log('类实现接口方法1')
         }
         eat() {
-          console.log("类实现接口方法1")
+          console.log('类实现接口方法1')
         }
       }
       //类型推论：
       // 类型断言 表示这个对象就是这样一个类型
       let shcool2: Ischool = {
-        name: "清华",
+        name: '清华',
         age: 100,
-        address: "北京"
+        address: '北京'
       } as Ischool
       console.log(shcool2)
       //接口 还可以用来约束函数
@@ -222,27 +222,27 @@ export default {
       //type用来定义一个类型或者类型别名
       type GetUserNameType = (firstNmae: string, lastName: string) => void
       let getUserName: GetUserNameType = function (firstNmae: string, lastName: string): void {}
-      type keyin = "a" | "b" | "c"
+      type keyin = 'a' | 'b' | 'c'
       type keyOut = {
         [key in keyin]: any
       }
-      const keyOutb: keyOut = { a: "1", b: "2", c: "3" }
-      console.log("key in", keyOutb)
+      const keyOutb: keyOut = { a: '1', b: '2', c: '3' }
+      console.log('key in', keyOutb)
       //可选参数
       function print(name: string, age?: number): string {
         return name
       }
-      console.log(print("可选参数"))
+      console.log(print('可选参数'))
       //默认参数
-      function ajax(url: string, method: string = "GET") {
+      function ajax(url: string, method: string = 'GET') {
         console.log(url, method)
       }
-      ajax("/users")
+      ajax('/users')
       //剩余参数
       function sum(...numbers: Array<number>) {
         return numbers.reduce((all, item) => all + item, 0)
       }
-      console.log("剩余参数：", sum(1, 2, 3, 4, 6, 67))
+      console.log('剩余参数：', sum(1, 2, 3, 4, 6, 67))
       //函数重写是指子类重写继承父类中的方法
       //函数重载是指为同一函数提供多种类型的定义
       interface OverLoad {
@@ -254,14 +254,14 @@ export default {
       function attr(val: string, time: number): void
       function attr(val: number, time: number): void
       function attr(val: any, time?: any): void {
-        console.log("overLoad-time:", time)
-        if (typeof val === "string") {
+        console.log('overLoad-time:', time)
+        if (typeof val === 'string') {
           overLoad.name = val
-        } else if (typeof val === "number") {
+        } else if (typeof val === 'number') {
           overLoad.age = val
         }
       }
-      attr("overload", 166)
+      attr('overload', 166)
       attr(202264, 255)
       // Argument of type 'true' is not assignable to parameter of type 'number'.
       // attr(true)
@@ -269,7 +269,7 @@ export default {
 
       let delay = (ms: number) => {
         setTimeout(function () {
-          console.log("TS箭头函数")
+          console.log('TS箭头函数')
         }, ms)
       }
       delay(1000)
@@ -280,12 +280,12 @@ export default {
         name: string
         age: number
         constructor() {
-          this.name = "classrom"
+          this.name = 'classrom'
           this.age = 26
         }
       }
       let p1 = new classromOne()
-      console.log("classromOne", p1.name, p1.age)
+      console.log('classromOne', p1.name, p1.age)
       //存取
       class Classtwo {
         nameShow: string
@@ -307,9 +307,9 @@ export default {
           this.ageShow = newval + 2
         }
       }
-      let p2 = new Classtwo("set", 11)
+      let p2 = new Classtwo('set', 11)
       console.log(p2.name, p2.age)
-      p2.name = "class"
+      p2.name = 'class'
       p2.age = 26
       console.log(p2.name, p2.age)
       //参数定义
@@ -319,7 +319,7 @@ export default {
           this.name = name
         }
       }
-      let personTry = new Person("xxxx")
+      let personTry = new Person('xxxx')
       //constructor(public readonly name:string)
       // personTry.name='dddd'//Cannot assign to 'name' because it is a constant or a read-only property.
       console.log(personTry.name)
@@ -356,7 +356,7 @@ export default {
         }
       }
       class Student extends Common {
-        static type = "Student"
+        static type = 'Student'
         studentId: number
         constructor(name: string, age: number, address: string, money: number, studentId: number) {
           super(name, age, address, money)
@@ -373,18 +373,18 @@ export default {
         }
       }
 
-      let student = new Student("小明", 12, "北京", 100000, 1111111)
+      let student = new Student('小明', 12, '北京', 100000, 1111111)
       console.log(student.getName())
       // Property 'address' is protected and only accessible within class 'Common' and its subclasses.
       console.log(student.name, student.age, student.getName(), student.getStudentId())
-      student.name = "小红"
+      student.name = '小红'
       student.age = 14
       student.studentId = 12332211
       console.log(student.name, student.age, student.studentId)
-      console.log("Student---type", Student.type)
-      let student2 = new Common("豆豆", 27, "陕西", 100000)
+      console.log('Student---type', Student.type)
+      let student2 = new Common('豆豆', 27, '陕西', 100000)
       console.log(student2.name, student2.age, student2.getName())
-      student2.name = "豆豆2"
+      student2.name = '豆豆2'
       console.log(student2.name)
       // 抽象类
       abstract class Animal {
@@ -397,8 +397,8 @@ export default {
         }
       }
       let cat = new Cat()
-      cat.name = "猫"
-      console.log("抽象类：", cat.getName())
+      cat.name = '猫'
+      console.log('抽象类：', cat.getName())
     },
     Decorator() {
       /**
@@ -447,10 +447,10 @@ export default {
       console.log(d) //2
     },
     double(input: string | number | boolean) {
-      if (typeof input === "string") {
+      if (typeof input === 'string') {
         return input + input
       } else {
-        if (typeof input === "number") {
+        if (typeof input === 'number') {
           return input * 2
         } else {
           return !input
@@ -460,7 +460,7 @@ export default {
     //类型保护
     ClassProtect() {
       class Animal {
-        public name: string = "cat"
+        public name: string = 'cat'
         constructor(name: string) {
           this.name = name
         }
@@ -478,14 +478,14 @@ export default {
           console.log(a.name)
         }
       }
-      let b = new Bird("bird")
+      let b = new Bird('bird')
       getName(b)
-      let a = new Animal("cat")
+      let a = new Animal('cat')
       getName(a)
     },
     mergeNull() {
       let customer = {
-        name: "Carl",
+        name: 'Carl',
         details: { age: 82 }
       }
       //解析：customer.name?customer.name:undefined
@@ -499,31 +499,31 @@ export default {
     uniteType() {
       interface WarnningButton {
         //字面量联合类型
-        class: "warnning"
-        text1: "警告"
+        class: 'warnning'
+        text1: '警告'
       }
       interface DangerButton {
-        class: "danger"
-        text2: "危险"
+        class: 'danger'
+        text2: '危险'
       }
       type Button = WarnningButton | DangerButton
       function getButton(button: Button) {
-        if (button.class == "warnning") {
+        if (button.class == 'warnning') {
           console.log(button.text1)
         }
-        if (button.class == "danger") {
+        if (button.class == 'danger') {
           console.log(button.text2)
         }
       }
       let button: DangerButton = {
-        class: "danger",
-        text2: "危险"
+        class: 'danger',
+        text2: '危险'
       }
       getButton(button)
       let button2: WarnningButton = {
-        class: "warnning",
-        text1: "警告",
-        message: ""
+        class: 'warnning',
+        text1: '警告',
+        message: ''
       } as WarnningButton
       getButton(button2)
     },
@@ -535,7 +535,7 @@ export default {
         long: number
       }
       function getType(val: One | Two) {
-        if ("fly" in val) {
+        if ('fly' in val) {
           console.log(val.fly)
         } else {
           console.log(val.long)
@@ -571,12 +571,12 @@ export default {
         return x.name
       }
       let x: Bird = {
-        name: "bird",
+        name: 'bird',
         leg: 2
       }
       getAnimal(x)
       let x2: Dog = {
-        name: "dog",
+        name: 'dog',
         leg: 4
       }
       getAnimal(x2)
@@ -593,10 +593,10 @@ export default {
       }
       type Animal = LandAnimal & Marine
       let a: Animal = {
-        name: "🐟",
+        name: '🐟',
         fly() {},
         Swimming() {
-          console.log("会泳游")
+          console.log('会泳游')
         }
       }
       console.log(a.name)
@@ -607,13 +607,13 @@ export default {
       interface Person {
         name: string
         age: number
-        gender: "male" | "female"
+        gender: 'male' | 'female'
       }
       type PartialPerson = {
         [key in keyof Person]?: Person[key]
       }
       let p: PartialPerson = {
-        name: "sss",
+        name: 'sss',
         age: 23
       }
     },
@@ -625,7 +625,7 @@ export default {
       interface Person {
         name: string
         age: number
-        gender: "male" | "female"
+        gender: 'male' | 'female'
       }
       type ap = Partial<Person>
       const a: ap = {}
@@ -636,13 +636,13 @@ export default {
       interface Person {
         name: string
         age: number
-        gender: "male" | "female"
+        gender: 'male' | 'female'
       }
       type ap = Required<Person>
       const a: ap = {
-        name: "ss",
+        name: 'ss',
         age: 2,
-        gender: "male"
+        gender: 'male'
       }
       console.log(a)
     },
@@ -651,13 +651,13 @@ export default {
       interface Person {
         name: string
         age: number
-        gender: "male" | "female"
+        gender: 'male' | 'female'
       }
       type ap = Readonly<Person>
       let a: ap = {
-        name: "ss",
+        name: 'ss',
         age: 2,
-        gender: "male"
+        gender: 'male'
       }
       a.name
       console.log(a.name)
@@ -667,11 +667,11 @@ export default {
       interface Person {
         name: string
         age: number
-        gender: "male" | "female"
+        gender: 'male' | 'female'
       }
-      type pickPerson = Pick<Person, "name">
+      type pickPerson = Pick<Person, 'name'>
       let a: pickPerson = {
-        name: "pick"
+        name: 'pick'
       }
       a.name
       console.log(a.name)
@@ -695,7 +695,7 @@ export default {
       }
       type Animal<T> = T extends Fish ? Swimming : fly
       let a: Animal<Fish2> = {
-        name: "🐟",
+        name: '🐟',
         long: 200
       }
       //bird ->fly
@@ -705,11 +705,11 @@ export default {
     },
     ReturnFun() {
       function getUserReturn() {
-        return { name: "sss" }
+        return { name: 'sss' }
       }
       type user = ReturnType<typeof getUserReturn>
       let user1: user = {
-        name: "ssddd"
+        name: 'ssddd'
       }
     }
   }

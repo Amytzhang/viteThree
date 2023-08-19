@@ -3,10 +3,26 @@ import Header from './Layout/Header.vue'
 </script>
 
 <template>
-  <div class="bg-white dark:bg-black h-screen font-serif">
+  <div class="bg-white dark:bg-black h-screen font-serif content">
     <Header></Header>
-    <router-view></router-view>
+    <div class="container ml bg-orange-300 content-box">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 <script setup></script>
-<style lang="scss"></style>
+<style lang="less">
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &-box {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+</style>

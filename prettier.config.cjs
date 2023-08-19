@@ -11,11 +11,20 @@ module.exports = {
   /** 换行符的使用 */
   endOfLine: "auto",
   /** 是否采用单引号 */
-  singleQuote: false,
+  singleQuote: true,
   /** 对象或者数组的最后一个元素后面不要加逗号 */
   trailingComma: "none",
   /** 是否加分号 */
   semi: false,
   /** 是否使用 Tab 格式化 */
-  useTabs: false
+  useTabs: false,
+  //空格敏感
+  HTMLWhitespaceSensitivity: 'ignore',
+  extends: [
+    //继承 vue 的标准特性
+    'plugin:vue/essential',
+    'eslint:recommended',
+    //避免冲突
+    'plugin:prettier/recommended'
+  ]
 }

@@ -13,10 +13,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue"
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: "TsBasis1",
+  name: 'TsBasis1',
 
   setup(props, contex) {
     let interfaceFunction = (param?: any): void => {
@@ -28,7 +28,7 @@ export default defineComponent({
         }
         return result
       }
-      let result = createArray<String>(3, "x")
+      let result = createArray<String>(3, 'x')
 
       //默认参数
       function createArray2<T = number>(length: number, value: T): Array<T> {
@@ -38,7 +38,7 @@ export default defineComponent({
         }
         return result
       }
-      let result2 = createArray2<string>(3, "x")
+      let result2 = createArray2<string>(3, 'x')
 
       //类数组 arguements
       function sum(...args: any[]) {
@@ -47,9 +47,9 @@ export default defineComponent({
           console.log(arg[i])
         }
       }
-      sum(1, 2, 3, "4", "类数组")
+      sum(1, 2, 3, '4', '类数组')
 
-      console.log("setup:", result)
+      console.log('setup:', result)
 
       class MyArray<T> {
         private list: T[] = []
@@ -72,7 +72,7 @@ export default defineComponent({
       classTry.add(3)
       classTry.add(6)
       let max = classTry.getMax()
-      console.log("泛型类", max)
+      console.log('泛型类', max)
 
       //接口泛型
       interface Calculate {
@@ -82,7 +82,7 @@ export default defineComponent({
         return a
       }
       let result4 = add<number>(4, 5)
-      console.log("接口泛型：", result4)
+      console.log('接口泛型：', result4)
       interface Carts<T> {
         list: T[]
       }
@@ -92,14 +92,14 @@ export default defineComponent({
       //泛型类型别名
       //泛型类型别名可以表达更复杂的类型
       type Cart2<T> = { list: T[] } | T[]
-      let c1: Cart2<string> = { list: ["2"] }
+      let c1: Cart2<string> = { list: ['2'] }
 
       //多个类型参数  如何在不增加中间变量的情况下，交换两个变量的值
       function swap<A, B>(tuple: [A, B]): [B, A] {
         return [tuple[1], tuple[0]]
       }
       let result5 = swap<Number, Number>([1, 2])
-      console.log("交换参数：", result5)
+      console.log('交换参数：', result5)
 
       //泛型的约束
       //在函数中使用泛型的时候，由于预先不知道具体类型，所以不能访问相应类型的方法,可以用接口解决
@@ -110,7 +110,7 @@ export default defineComponent({
         //Property 'length' does not exist on type 'T'
         console.log(val.length)
       }
-      logger("zhang")
+      logger('zhang')
     }
     return {
       interfaceFunction
