@@ -5,7 +5,7 @@ import Header from './Layout/Header.vue'
 <template>
   <div class="bg-white dark:bg-black h-screen font-serif content">
     <Header></Header>
-    <div class="container ml bg-orange-300 content-box">
+    <div class="container ml content-box">
       <router-view></router-view>
     </div>
   </div>
@@ -21,8 +21,7 @@ import Header from './Layout/Header.vue'
   align-items: center;
   &-box {
     height: 100vh;
-    overflow: hidden;
+    overflow-y: auto;
   }
 }
-
 </style>
