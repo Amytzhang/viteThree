@@ -2,7 +2,7 @@
   <div class="define-header dark:text-white flex justify-end px-3.5 border-b-2">
     <div class="function-tool divide-x">
       <span class="px-1.5" @click="toTsStatus">Demos</span>
-      <span class="px-1.5" @click="changBg">切换</span>
+      <div class="px-1.5" @click="changBg"><Icon name="sun" /> 切换</div>
     </div>
   </div>
 </template>
