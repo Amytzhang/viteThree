@@ -1,9 +1,11 @@
 <template>
   <div class="define-header dark:text-white flex justify-end px-3.5 border-b-2">
     <div class="grow"></div>
-    <div class="flex divide-x">
-      <div class="px-1.5" @click="toTsStatus">Demos</div>
-      <div class="px-1.5 container" @click="changBg">
+    <div class="header-fun">
+      <!-- todo 此处放大功能模块 -->
+      <div v-for="item in directory" @click="toPath(item.path)" class="cursor-pointer">{{ item.label }}</div>
+      <!-- todo 黑白模式切换 -->
+      <div class="header-mode cursor-pointer" @click="changBg">
         <SunIcon class="h-5 w-5" v-show="dark" />
         <MoonIcon class="h-5 w-5" v-show="!dark" />
       </div>
@@ -12,18 +14,27 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import { MoonIcon, SunIcon } from '@heroicons/vue/outline'
 const router = useRouter()
 const dark = ref(true)
+const directory = reactive([
+  {
+    label: 'ThreeDemos',
+    path: '/demo'
+  },
+  {
+    label: 'TS',
+    path: 'tsStatus'
+  }
+])
 /**
- * 跳转知识
+ * 跳转
  */
-const toTsStatus = () => {
-  console.log('跳转')
+const toPath = (path: string) => {
   router.push({
-    name: 'tsStatus'
+    path
   })
 }
 /**
@@ -62,7 +73,12 @@ const translateBack = () => {
   line-height: 3rem;
   box-sizing: border-box;
 }
-.container {
+.header-fun {
+  display: grid;
+  grid-gap: 1.2rem;
+  grid-auto-flow: column;
+}
+.header-mode {
   display: flex;
   justify-content: center;
   align-items: center;

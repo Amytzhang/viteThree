@@ -10,6 +10,11 @@ export const routes = [
     name:'tsStatus',
     path:'/tsStatus',
     component:()=>import('../components/TsStatus/index.vue')
+  },
+  {
+    name:'demo',
+    path:'/demo',
+    component:()=>import('../components/ThreeDemo/index.vue')
   }
 ]
 

@@ -126,15 +126,12 @@ $button_height: 45px;
   border: 1px solid white;
 }
 .home {
-  width: 100%;
-  height: 100%;
   box-sizing: border-box;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   .left {
     width: 500px;
-    background: white;
   }
   .context {
     text-align: left;
