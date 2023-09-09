@@ -11,9 +11,13 @@ import { ref } from 'vue'
 import TsBasis1 from './component/Ts_Basis1.vue'
 import TsBasis2 from './component/Ts_Basis2.vue'
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
+
 .ts-learn {
-  width: 100%;
-  height: 100%;
+  border-radius: 14px;
+  background-color: rgb(255 255 255 / 31%);
+  backdrop-filter: blur(20px);
 }
+
+
 </style>

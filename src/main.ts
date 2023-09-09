@@ -7,7 +7,6 @@ import router from './router'
 import { store } from './store/index'
 import icon from '@/components/Icon.vue'
 
-
 const app = createApp(App)
 //注册
 app.component('Icon', icon)

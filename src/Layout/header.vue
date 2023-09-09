@@ -1,5 +1,5 @@
 <template>
-  <div class="define-header dark:text-white flex justify-end px-3.5 border-b-2">
+  <div class="define-header dark:text-white flex justify-end px-3.5">
     <div class="grow"></div>
     <div class="header-fun">
       <!-- todo 此处放大功能模块 -->

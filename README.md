@@ -1,8 +1,3 @@
-# Vue 3 + TypeScript + Vite
+# Vue 3 + TypeScript + Vite +prettier + pinia
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-## Config
-  store --> pinia
-  css --> less & scss & tailwindcss
-  format --> eslint & prettier
-  icon-font --> Heroicons
+- 此项目只为记录日常学习，之前为了记录初学的框架也建立了一些项目练习，因为没有一个系统的归置使得后来遇见的一些问题只有一个大概的印象却查找不到在哪见过，所以整理一下，可能只有基础的一些知识点，如果这里的东西能帮助有需要的人，也很开心

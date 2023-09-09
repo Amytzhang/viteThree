@@ -1,19 +1,19 @@
 <template>
-  <div id="root">
+  <div class="ts-basic-one">
     <h1>TS基础语法</h1>
-    <div class="about">
-      <div class="left">
-        <div class="btn" @click="baseTs()">点击基本类型</div>
-        <div class="btn" @click="voidTs('voidStart')">voidTs</div>
-        <div class="btn" @click="createNever('Never---error')">createNever</div>
-        <div class="btn" @click="interfaceFun()">点击接口</div>
-        <div class="btn" @click="expression()">type +函数重载</div>
-        <div class="btn" @click="classTry">Class</div>
-        <div class="btn" @click="extendFun">Class继承参数修饰符</div>
-        <div class="btn" @click="Decorator">装饰器</div>
+    <div class="ts-content" >
+      <div class="ts-content-left">
+        <button id="ts-root" class="raise" @click="baseTs()">点击基本类型</button>
+        <button class="fill" @click="voidTs('voidStart')">voidTs</button>
+        <button class="fill" @click="createNever('Never---error')">createNever</button>
+        <button class="fill" @click="interfaceFun()">点击接口</button>
+        <button class="fill" @click="expression()">type +函数重载</button>
+        <button class="fill" @click="classTry">Class</button>
+        <button class="fill" @click="extendFun">Class继承参数修饰符</button>
+        <button class="fill" @click="Decorator">装饰器</button>
       </div>
-      <div class="right">
-        <div class="btn" @click="Decorator">接口</div>
+      <div class="ts-content-right">
+        <button class="fill" @click="Decorator">接口</button>
         <p>函数兼容性：</p>
         <p class="p-child">1.参数可以少，但不能多</p>
         <p class="p-child">2.函数参数的协变：参数类型可以多但不能少</p>
@@ -110,10 +110,11 @@ export default {
         ROLE = 'manger'
       }
       //“const”枚举只能用于属性或索引访问表达式或导入声明或导出赋值或类型查询的右侧。
+     
       console.log('enum:', USER_ROLE)
-      let root: HTMLElement | null = document.getElementById('root')
+      let root: HTMLElement | null = document.getElementById('ts-root')
       root!.style.backgroundColor == 'red'
-        ? (root!.style.backgroundColor = 'white')
+        ? (root!.style.backgroundColor = '#ff7f82')
         : (root!.style.backgroundColor = 'red') //断言不为空
       console.log('root!.style.backgroundColor', root!.style.backgroundColor == 'red')
       //null  undefined
@@ -715,33 +716,33 @@ export default {
 }
 </script>
 <style scoped lang="less">
-.about {
+.ts-basic-one{
+  h1{
+    font-size: 2rem;
+    height: 5rem;
+    line-height: 5rem;
+    text-align: center;
+  }
+}
+.ts-content {
   display: flex;
-  // justify-content: space-between;
-  // flex-direction属性决定主轴的方向（即项目的排列方向）
-  // flex-direction: column;
-  // align-items属性定义项目在交叉轴上如何对齐。
-  //  align-items: center;
+  &-left {
+    width: 40rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    button {
+      width: 20rem;
+    }
+  }
+  &-right {
+    flex: 1;
+    font-size: 1.2rem;
+  }
 }
-.left {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-.right {
-  flex: 1;
-}
-.btn {
-  width: 200px;
-  height: 100px;
-  line-height: 100px;
-  margin-bottom: 10px;
-  background-color: #42b983;
-  box-sizing: border-box;
-  border: 1px solid yellow;
-}
+
+
 p {
   text-align: left;
   font-weight: 600;

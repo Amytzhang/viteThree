@@ -1,9 +1,9 @@
 <template>
-  <div class="home">
+  <div class="ts-basic-two">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/> -->
     <div class="left">
-      <button class="handle" @click="interfaceFunction">泛型</button>
+      <button class="fill" @click="interfaceFunction">泛型</button>
     </div>
     <div class="context">
       <p>泛型是指在定义函数、接口或者类的时候，不预定指定具体的类型，而是在使用的时候再指定类型的一种特性</p>
@@ -118,31 +118,29 @@ export default defineComponent({
   }
 })
 </script>
-<style scoped lang="scss">
-$button_height: 45px;
-@mixin button-style($color: aqua, $width: 200px) {
-  width: $width;
-  background-color: $color;
-  border: 1px solid white;
-}
-.home {
+<style lang="scss" scoped>
+.ts-basic-two {
   box-sizing: border-box;
-  padding: 20px;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
+  font-size: 1.2rem;
   .left {
-    width: 500px;
+    width: 40rem;
+    position: relative;
+    button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
   .context {
     text-align: left;
     flex: 1;
-    background-color: bisque;
-    padding: 5px;
-  }
-  .handle {
-    height: $button_height;
-    line-height: $button_height;
-    @include button-style(#9addf1);
+    background-color: rgba(143, 200, 102,.8);
+    padding: 1.5rem 1rem;
+    border-radius: 0.5rem;
   }
 }
 </style>
