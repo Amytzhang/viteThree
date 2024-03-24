@@ -30,6 +30,21 @@ export const routes = [
     name: 'start',
     path: '/demo/start',
     component: Starts
+  },
+  {
+    name:'es',
+    path:'/es',
+    component: ()=>import ("../Layout/EsDemo.vue")
+  },
+  {
+    name:'fetch',
+    path:'/fetch',
+    component: ()=>import ("../components/FetchDemo/fetchList.vue")
+  },
+  {
+    name:'vocal',
+    path:'/vocal',
+    component: ()=>import ("../components/vocal.vue")
   }
 ]
 

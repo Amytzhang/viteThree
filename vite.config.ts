@@ -18,5 +18,9 @@ export default defineConfig({
     //extensions: [".ts", ".js", ".vue", ".json", ".mjs"],
     extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json", ".vue"],
   },
+  server: {
+    port: 8080 // 你想要的端口号
+  }
+
 
 })

@@ -27,6 +27,18 @@ const directory = reactive([
   {
     label: 'TS',
     path: 'tsStatus'
+  },
+  {
+    label: 'ES',
+    path: 'es'
+  },
+  {
+    label: 'fetch',
+    path: '/fetch'
+  },
+  {
+    label: 'vocal',
+    path: '/vocal'
   }
 ])
 /**

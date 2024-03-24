@@ -5,7 +5,9 @@
     "module": "ESNext",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
-
+    //装饰器
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     /* Bundler mode */
     "moduleResolution": "node",
     "allowImportingTsExtensions": true,
@@ -24,6 +26,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/components/es/decorator.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

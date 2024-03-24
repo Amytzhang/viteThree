@@ -2,7 +2,7 @@
   <component :is="icon" class="ct-w-5 ct-h-5" />
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue'
 import * as heroIcons from '@heroicons/vue/outline'
 export default defineComponent({
@@ -13,7 +13,7 @@ export default defineComponent({
       required: true
     }
   },
-  setup(props, ctx) {
+  setup(props) {
     let name = ''
 
     props.name.split('-').forEach((v) => {
